@@ -13,7 +13,6 @@ class App extends React.Component {
         order: {}
     };
 
-
     componentDidMount() {
 
         const { params } = this.props.match;
@@ -22,6 +21,17 @@ class App extends React.Component {
             context: this,
             state: 'fishes'
         });
+
+        const localStorageRef = localStorage.getItem(params.storeId);
+
+        if(localStorageRef){
+            this.setState({ order: JSON.parse(localStorageRef) });
+        }
+    }
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+
+        localStorage.setItem(this.props.match.params.storeId, JSON.stringify(this.state.order));
     }
 
     componentWillUnmount() {
@@ -30,7 +40,6 @@ class App extends React.Component {
 
     addFish = fish => {
 
-        debugger;
         //  1. Take a copy of the existing state
         const fishes = { ...this.state.fishes };
 
