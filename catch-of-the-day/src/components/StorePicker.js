@@ -1,7 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { getFunName } from "../helpers";
 
 class StorePicker extends React.Component {
+
+    static propTypes = {
+        history: PropTypes.object
+    };
 
     myInput = React.createRef();
 
@@ -13,7 +18,7 @@ class StorePicker extends React.Component {
         // 2. Get text from input
         const storeName = this.myInput.current.value;
 
-        // 3. Change the cpage to /store/whatever-they-entered  
+        // 3. Change the cpage to /store/whatever-they-entered
         this.props.history.push(`/store/${storeName}`);
     };
 
