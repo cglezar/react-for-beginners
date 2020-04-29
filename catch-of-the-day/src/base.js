@@ -2,9 +2,9 @@ import Rebase from 're-base';
 import firebase from 'firebase';
 
 const firebaseApp = firebase.initializeApp({
-    apiKey: "AIzaSyDa4SzcYwVaZJBgi_hL9E_cVui-5zhWI6M",
-    authDomain: "catch-of-the-day-cesar2.firebaseapp.com",
-    databaseURL: "https://catch-of-the-day-cesar2.firebaseio.com"
+    apiKey: "AIzaSyBWVtFNqqoGTi3BpRPfEOtYZXkvn-5Na_8",
+    authDomain: "catch-of-the-day-cesar3.firebaseapp.com",
+    databaseURL: "https://catch-of-the-day-cesar3.firebaseio.com"
 });
 
 
